@@ -6,12 +6,21 @@
 	<link type="text/css" rel="stylesheet" href="css/reset.css"/>
 	<link type="text/css" rel="stylesheet" href="css/main.css"/>
 	<script>
-		
+		function moveUP(){
+			let elem = document.getElementsByClassName("zanaves")[0];
+			/*let startpos = -5;
+			console.log(pos);
+			let finalpos = -100;*/
+			elem.classList.remove("zanaves-hover");
+			elem.classList.add("zanaves-active");
+			
+		}
 	</script>
 </head>	
 
 <body>
-	<div class="zanaves">
+	<div class="zanaves zanaves-hover" onclick="moveUP()">
 	</div>
+	
 </body>
 </html>
