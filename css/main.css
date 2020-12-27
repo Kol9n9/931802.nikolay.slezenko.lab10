@@ -38,3 +38,77 @@ body{
 	from{top: -5%;}
 	to{top:-100%;}
 }
+.scence{
+	text-align: center;
+	position: relative;
+	display: none;
+}
+.magic>img{
+	width: 18%;
+    margin-top: -12%;
+}
+.magic-hat{
+	width: 7% !important;
+	transform: rotate(180deg);
+	padding-bottom: 2%;
+	margin-left: 18%;
+}
+.animal>img{
+	width: 5%;
+	position: absolute;
+	margin-left: 6%;
+	cursor: pointer;
+}
+.rabbit{
+	margin-top: -12%;
+}
+.bird{
+	margin-top: -7%;
+}
+.lamp img{
+	width: 20%;
+}
+.lightscence{
+	margin-top: -14.3802%;
+	display: none;
+	opacity: 0;
+}
+.lightOn{
+	animation: animLightOn 0.2s 1 ease-in-out;
+	opacity: 0.5;
+}
+.lightOff{
+	animation: animLightOff 0.2s 1 ease-in-out;
+}
+.light{
+	width: 4.5%;
+	border-right: 250px solid transparent;
+	border-left: 250px solid transparent;
+	border-bottom: 500px solid yellow;
+	margin: 0 auto;
+}
+.animalShow{
+	animation: animAnimalShow 0.5s 1 ease-in-out;
+	margin-top: -12%;
+}
+.animalHide{
+	animation: animAnimalHide 0.5s 1 ease-in-out;
+	margin-top: -7%;
+	
+}
+@keyframes animLightOn{
+	from{opacity: 0;}
+	to{opacity: 0.5;}
+}
+@keyframes animLightOff{
+	from{opacity: 0.5;}
+	to{opacity: 0;}
+}
+@keyframes animAnimalShow{
+	from{margin-top: -7%;}
+	to{margin-top: -12%;}
+}
+@keyframes animAnimalHide{
+	from{margin-top: -12%;}
+	to{margin-top: -7%;}
+}

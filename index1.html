@@ -6,21 +6,79 @@
 	<link type="text/css" rel="stylesheet" href="css/reset.css"/>
 	<link type="text/css" rel="stylesheet" href="css/main.css"/>
 	<script>
+		let isLight = false;
+		let isRabbit = true;
 		function moveUP(){
 			let elem = document.getElementsByClassName("zanaves")[0];
-			/*let startpos = -5;
-			console.log(pos);
-			let finalpos = -100;*/
 			elem.classList.remove("zanaves-hover");
 			elem.classList.add("zanaves-active");
-			
+			document.getElementsByClassName("scence")[0].style.display = "block";
+		}
+		function changeLight(){
+			isLight = (isLight) ? false : true;
+			if(isLight){
+				isRabbit = true;
+				document.getElementsByClassName("lightscence")[0].classList.remove("lightOff");
+				document.getElementsByClassName("lightscence")[0].classList.add("lightOn");
+				document.getElementsByClassName("lightscence")[0].style.display = "block";
+			}
+			else
+			{
+				document.getElementsByClassName("lightscence")[0].classList.remove("lightOn");
+				document.getElementsByClassName("lightscence")[0].classList.add("lightOff");
+				setTimeout(function(e){
+					document.getElementsByClassName("lightscence")[0].style.display = "none";
+					document.getElementsByClassName("rabbit")[0].classList.remove("animalShow");
+					document.getElementsByClassName("bird")[0].classList.remove("animalShow");
+					document.getElementsByClassName("rabbit")[0].classList.remove("animalHide");
+					document.getElementsByClassName("bird")[0].classList.remove("animalHide");
+				},200);
+			}
+		}
+		function changeAnimal(){
+			if(isRabbit)
+			{
+				document.getElementsByClassName("rabbit")[0].classList.remove("animalShow");
+				document.getElementsByClassName("rabbit")[0].classList.add("animalHide");
+				setTimeout(function(e){
+					document.getElementsByClassName("bird")[0].classList.add("animalShow");
+					document.getElementsByClassName("bird")[0].classList.remove("animalHide");
+				},500);
+				isRabbit = false;
+			}
+			else
+			{
+				document.getElementsByClassName("bird")[0].classList.remove("animalShow");
+				document.getElementsByClassName("bird")[0].classList.add("animalHide");
+				setTimeout(function(e){
+					document.getElementsByClassName("rabbit")[0].classList.add("animalShow");
+					document.getElementsByClassName("rabbit")[0].classList.remove("animalHide");
+				},500);
+				isRabbit = true;
+			}
 		}
 	</script>
 </head>	
 
 <body>
+	<div class="scence">
+		<div class="lamp" onclick="changeLight()">
+			<img src="css/img/3.png" alt="lamp"/>
+		</div>
+		<div class="lightscence">
+			<div class="light">
+			</div>
+			<div class="magic">
+				<img class="magic-img" src="css/img/2.png" alt="magic"/>				
+				<div class="animal">
+					<img class="rabbit" src="css/img/5.png" alt="rabbit" onclick="changeAnimal()"/>
+					<img class="bird" src="css/img/6.png" alt="rabbit" onclick="changeAnimal()"/>
+				</div>
+				<img class="magic-hat" src="css/img/4.png" alt="hat"/>
+			</div>
+		</div>
+	</div>
 	<div class="zanaves zanaves-hover" onclick="moveUP()">
 	</div>
-	
 </body>
 </html>
