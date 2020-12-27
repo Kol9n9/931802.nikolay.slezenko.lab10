@@ -67,6 +67,7 @@ body{
 }
 .lamp img{
 	width: 20%;
+	cursor: pointer;
 }
 .lightscence{
 	margin-top: -14.3802%;
